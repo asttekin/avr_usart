@@ -12,7 +12,7 @@ void usart0Init(void)
 	UCSR0A = 0x00;	//U2X: Double the USART Transmission Speed Disabled
 	UCSR0B = 0X18;	//RX Complete Interrupt Enabled,Transmitter Enabled
 	UCSR0C = 0x06;	//URSEL Enabled, Asynchronous Operation, Parity Disabled, 8bit Enabled
-	UCSR0B = (1<<RXEN0)|(1<<RXCIE0)| (1<<TXEN0);	//enable global interrupts
+	UCSR0B = (1<<RXEN0)|(1<<RXCIE0);	//enable global interrupts
 	UBRR0 = 95; //4800bps
 }
 
@@ -23,7 +23,7 @@ void usart0SetSerialBaudrate(uint32_t usart0Baudrate)
 	UCSR0A = 0x00;	//U2X: Double the USART Transmission Speed Disabled
 	UCSR0B = 0x18;	//RX Complete Interrupt Enabled,Transmitter Enabled
 	UCSR0C = 0x06;	//URSEL Enabled, Asynchronous Operation, Parity Disabled, 8bit Enabled
-	UCSR0B = (1<<RXEN0)|(1<<RXCIE0) | (1<<TXEN0);//enable global interrupts
+	UCSR0B = (1<<RXEN0)|(1<<RXCIE0);//enable global interrupts
 	
 	
 	
